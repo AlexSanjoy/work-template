@@ -1,6 +1,2 @@
 .idea/
 node_modules
-.sublime-gulp.cache
-package.json
-*.exe
-*.cfg
