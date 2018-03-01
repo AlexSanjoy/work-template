@@ -1,19 +1,19 @@
+@import "font"
 @import "normalize"
-@import "layout"
-@import "variables"
-@import "fonts"
+@import "libs"
+@import "var"
+@import "constructorLibs"
+@import "components"
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-@import "media"
+*
+	box-sizing: border-box
+	outline: none
+html 
+	font-size: $font-size + px
+body
+	position: relative
+	min-width: 320px
+	overflow-x: hidden
+	font-family: $default-font
+	color: $default-color
+	background-color: $default-bg-color
