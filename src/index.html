@@ -34,16 +34,24 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-@@include('components/form--rus/form-1.html')
-@@include('components/form--rus/form-2.html')
-@@include('components/form--rus/call-back.html')
+@@include('components/form--eng/form-1.html')
+@@include('components/form--eng/form-2.html')
+@@include('components/form--eng/call-back.html')
+@@include('components/form--eng/congrats.html')
+
 
     <!--js-->
     <script src="js/libs.min.js"></script>
     <script src="js/constructorLibs.js"></script>
     <script src="js/components.js"></script>
     <script src="js/common.js"></script>
-    <!--js-->
+    <script>
+    var configsList = ['https://moneytrack.pro/ru/config.js', 'config.js'];
+    $.getScript(configsList[0])
+        .fail(function(jqxhr, settings, exception) {
+            $.getScript(configsList[1])
+        });
+</script>
 
 <script src="js/form.js"></script>
 </body>

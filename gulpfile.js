@@ -44,8 +44,8 @@ gulp.task('scriptsLibs', function () {
 });
 
 
-gulp.task('json', function () {
-    return gulp.src('src/components/**/*.json')
+gulp.task('config', function () {
+    return gulp.src('src/components/**/config/*.*')
     .pipe(rename({dirname: ''}))
         .pipe(gulp.dest('build'));
 });
@@ -112,10 +112,10 @@ gulp.task('min', ['cssMin', 'jsMin'], function() {
 
 browserSync.watch('build/**/*.*').on('change', browserSync.reload);
 
-gulp.task('watch', ['browserSync', 'html', 'json','img-components', 'folder-components', 'img', 'fonts', 'sass', 'scriptsLibs', 'scripts'], function () {
+gulp.task('watch', ['browserSync', 'html', 'config','img-components', 'folder-components', 'img', 'fonts', 'sass', 'scriptsLibs', 'scripts'], function () {
     gulp.watch(['src/sass/*.s+(a|c)ss', 'src/components/**/*.s+(a|c)ss'], ['sass'], browserSync.reload);
     gulp.watch('src/fonts/**/*.*', ['fonts'], browserSync.reload);
-    gulp.watch('src/components/**/*.json', ['json'], browserSync.reload);
+    gulp.watch('src/components/**/config/*.*', ['config'], browserSync.reload);
     gulp.watch('src/components/**/img/*.*', ['img-components'], browserSync.reload);
     gulp.watch(['src/components/**/**/*.+(gif|jpeg|jpg|png|mp3|mp4|ogv|webm)','!src/components/**/img'], ['folder-components'], browserSync.reload);
     gulp.watch('src/components/**/*.html', ['html'], browserSync.reload);
